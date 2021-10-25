@@ -25,6 +25,9 @@ jobs:
     - name: Style with pycodestyle
       run: |
         pycodestyle *.py
+    - name: Unit testing
+      run: |
+        python3 -m doctest factorial.py
     - name: Build container
       run: echo "Building container iamge"
     - name: Deploy
