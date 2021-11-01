@@ -1,0 +1,7 @@
+on: [push]
+jobs:
+  hola-acciones:
+    runs-on: ubuntu-latest
+    steps:
+      -uses: actions/checkout@v2
+      -run: echo "this is first attempt"
