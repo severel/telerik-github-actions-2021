@@ -25,5 +25,9 @@ jobs:
       run: echo "Building container iamge"
     - name: Deploy
       run: echo "Deploying to cluster"
+    - name: ZAP Scan
+      uses: zaproxy/action-baseline@v0.6.1
+      with:
+       target: 'https://www.zaproxy.org'
     
 
