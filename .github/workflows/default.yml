@@ -41,6 +41,7 @@ jobs:
   upload-artifact:
     runs-on: ubuntu-latest
     steps:
+    - run: ls -a
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
