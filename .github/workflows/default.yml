@@ -38,6 +38,7 @@ jobs:
       run: |
         pycodestyle *.py
   lint:
+    needs: pre-build
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository code
@@ -74,6 +75,7 @@ jobs:
         name: factorial.py
         path: factorial.py
   unit-test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository code
@@ -85,13 +87,14 @@ jobs:
     - name: Unit testing
       run: |
         python3 -m doctest factorial.py
- 
   deploy:
+    needs: unit-test
     runs-on: ubuntu-latest
     steps:
     - name: Deploy
       run: echo "Deploying to cluster"
 #   DAST:
+#     needs: deploy
 #     runs-on: ubuntu-latest
 #     steps:
 #     - name: ZAP Scan
