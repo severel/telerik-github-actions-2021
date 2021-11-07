@@ -29,24 +29,29 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
+    - name: Build container
+      run: echo "Building container iamge"
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: factorial.py
+        path: factorial.py
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pylint
     - name: Lint with pylint
       run: |
-        python lint_test.py
-    - name: Build container
-      run: echo "Building container iamge"
-  upload-artifact:
-    runs-on: ubuntu-latest
-    steps:
-    - run: ls -a
-    - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        name: factorial.py
-        path: factorial.py
+        python lint_test.py      
   deploy:
     runs-on: ubuntu-latest
     steps:
