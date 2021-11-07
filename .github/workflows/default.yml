@@ -47,7 +47,7 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: factorial
-        path: ./factorial.py
+        path: ./telerik-github-actions-2021/factorial.py
 #     - name: ZAP Scan
 #       uses: zaproxy/action-baseline@v0.6.1
 #       with:
