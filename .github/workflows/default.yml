@@ -25,14 +25,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python: [ '3.9' , '3.8' , '3.7' ]
+        python-version: [ '3.9' , '3.8' , '3.7' ]
     steps:
     - name: Check out repository code
       uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.node }}
+        python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
         python --version
