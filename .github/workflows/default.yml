@@ -87,7 +87,8 @@ jobs:
     - name: Unit testing
       run: |
         python3 -m doctest factorial.py
-  sonarcloud:
+  SAST:
+    needs: unit-test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -99,7 +100,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   deploy:
-    needs: unit-test
+    needs: SAST
     runs-on: ubuntu-latest
     steps:
     - name: Deploy
