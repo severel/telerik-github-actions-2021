@@ -23,6 +23,9 @@ jobs:
         python lint_test.py
     - name: Build container
       run: echo "Building container iamge"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
     - name: Deploy
       run: echo "Deploying to cluster"
     - name: ZAP Scan
