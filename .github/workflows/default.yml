@@ -101,7 +101,7 @@ jobs:
       with:
         projectBaseDir: .
         args: >
-          -Dsonar.organization=my-organization
+          -Dsonar.organization=severel
           -Dsonar.projectKey=telerik-github-actions-2021
   deploy:
     needs: unit-test
