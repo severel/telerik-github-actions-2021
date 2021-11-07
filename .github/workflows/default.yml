@@ -43,6 +43,11 @@ jobs:
     steps:
     - name: Deploy
       run: echo "Deploying to cluster"
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: factorial
+        path: ./factorial.py
 #     - name: ZAP Scan
 #       uses: zaproxy/action-baseline@v0.6.1
 #       with:
