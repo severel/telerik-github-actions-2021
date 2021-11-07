@@ -21,6 +21,7 @@ jobs:
         echo "$JOB_ENVIRONMENT_VARIABLE"
         echo "$STEP_ENVIRONMENT_VARIABLE"
   style:
+    needs: pre-build
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository code
