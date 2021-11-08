@@ -124,17 +124,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  SCA:
-#     needs: unit-test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/python-3.8@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   deploy:
-    needs: [SAST,database-integration,SCA]
+    needs: [SAST,database-integration]
     runs-on: ubuntu-latest
     steps:
     - name: Deploy
