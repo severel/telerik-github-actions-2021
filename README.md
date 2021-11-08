@@ -44,3 +44,5 @@ upload factorial.py
 
 10. Create workflow for pull_request - excluding the deploy step
 
+11. Sceduled peiline for Snyk - scan once a day
+
