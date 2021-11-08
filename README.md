@@ -2,8 +2,8 @@
 A repository created for practicing Github Actions  
 Feel free to fork this repository and work in the forked version.
 
-# Create pre-build stage to print information
-## Add environment variables:
+1 Create pre-build stage to print information
+1.1 Add environment variables:
 Workflow:
 WORKSPACE_ENVIRONMENT_VARIABLE: 'custom workspace environment variable'
 
@@ -15,7 +15,7 @@ STEP_ENVIRONMENT_VARIABLE: 'custom step environment variable for bash'
 
 Print the environment variables.
 
-## Add secret
+1.2 Add secret
 PASSWORD
 
 Print the secret.
